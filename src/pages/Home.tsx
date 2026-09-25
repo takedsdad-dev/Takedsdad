@@ -1,100 +1,172 @@
 import { Link } from "react-router-dom"
-import { banks, cities, highlights, services } from "../site"
+
+const whyUs = [
+  "السداد المبكر بأي وقت بناء على ضوابط البنك المركزي السعودي",
+  "إمكانية تأجيل قسط من كل عام",
+  "الحصول على تأجيل سداد في بداية الأقساط التمويلية",
+  "السداد على أقساط تتناسب مع دخل العميل الشهري",
+]
+
+const testimonials = [
+  {
+    name: "ريم علي",
+    avatar: "/avatar-reem.png",
+    quote:
+      "منذ أن عرفت موقع تأكيد السداد لتسديد القروض، تغيرت حياتي المالية. حيث ساعدوني على سداد قروضي بشكل سهل وسريع. لقد أعجبتني سهولة استخدام الموقع وسرعة إستجابة فريق العمل. أشكر تأكيد السداد على ما قدموه لي من مساعدة",
+  },
+  {
+    name: "محمد سعيد",
+    avatar: "/avatar-mohammed.png",
+    quote:
+      "كنت أواجه صعوبة في سداد قرضي الشخصي. وجدت على موقع تأكيد السداد لتسديد القروض عدة نصائح وحلول لسداد القروض. ساعدني ذلك على وضع خطة مالية مناسبة لسداد قرضي وتحسين وضعي المالي. أشكر تأكيد السداد على توفيره خدماتهم المميزة.",
+  },
+  {
+    name: "خالد السبيعي",
+    avatar: "/avatar-khaled.png",
+    quote:
+      "كنت أعاني من تراكم الديون، ولم أجد أي حلول لتسديدها. ثم عثرت على موقع تأكيد السداد لتسديد القروض. حيث ساعدني ذلك الموقع على سداد كافة ديوني وتحسين وضعي المالي. أشكر موقع تأكيد السداد والقائمين عليه على مساعدتهم وسرعة استجابتهم.",
+  },
+]
+
+const loanCities = [
+  {
+    slug: "makkah",
+    title: "سداد قروض مكة",
+    text: "نوفر لكم في تأكيد السداد لتسديد القروض في مكة أفضل الحلول الممكنة للتخلص من عبء الديون ورفع التعثرات المالية.",
+  },
+  {
+    slug: "jeddah",
+    title: "سداد قروض جده",
+    text: "نضع خبرتنا وإمكانياتنا في خدمة عملائنا في جدة لتقديم أفضل الحلول لسداد القروض ورفع التعثرات المالية.",
+  },
+  {
+    slug: "taif",
+    title: "سداد قروض الطائف",
+    text: "نوفر لكم الدعم والاستشارات اللازمة لتسهيل عملية سداد قروضكم والتغلب على أي عقبات قد تواجهكم في الطائف.",
+  },
+  {
+    slug: "dammam",
+    title: "سداد قروض الدمام",
+    text: "نقدم في تأكيد السداد خطط سداد قروض تتسم بالمرونة والفاعلية لتناسب جميع الظروف والاحتياجات لعملاء الدمام.",
+  },
+  {
+    slug: "riyadh",
+    title: "سداد قروض الرياض",
+    text: "يضم فريق تأكيد السداد نخبة من الخبراء والمختصين في مجال تسديد القروض لتقديم أفضل الخدمات لعملائنا في الرياض.",
+  },
+  {
+    slug: "tabuk",
+    title: "سداد قروض تبوك",
+    text: "نسعى في تأكيد السداد لتقديم أفضل الخدمات والحلول الممكنة لعملائنا بمدينة تبوك بأسعار مناسبة ونتائج مضمونة.",
+  },
+]
 
 export default function Home() {
   return (
     <>
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">مكتب حل السداد لتسديد قروض ومتعثرات سمة</p>
+          <p className="eyebrow">مكتب تأكيد السداد لتسديد قروض ومتعثرات سمة</p>
           <h1>سداد القروض والمتعثرات</h1>
           <p>
-            حل السداد لتسديد قروض في المملكة العربية السعودية نقدم خدمات تسديد
+            تأكيد السداد لتسديد قروض في المملكة العربية السعودية نقدم خدمات تسديد
             القروض للعملاء المتعثرين في السداد، وذلك وفقًا لأحكام الشريعة
             الإسلامية، دون فوائد أو أرباح باهظة، مما يساعد العملاء على فك
             قروضهم وتحسين وضعهم المالي.
           </p>
           <div className="hero-actions">
-            <Link className="btn" to="/services">
+            <a className="btn" href="#loan-services">
               عرض الخدمات
-            </Link>
+            </a>
           </div>
         </div>
         <div className="hero-art">
           <img src="/hero-cash.jpg" alt="أوراق نقدية من فئة خمسمئة ريال" />
         </div>
         <div className="banks">
-          <h2>بنوك نتعامل معها</h2>
-          <ul>
-            {banks.map((bank) => (
-              <li key={bank}>{bank}</li>
-            ))}
-          </ul>
+          <img
+            src="/banks.png"
+            alt="بنوك نتعامل معها: مصرف الراجحي، بنك الرياض، بنك البلاد، مصرف الإنماء"
+          />
         </div>
       </section>
 
-      <section className="split">
-        <div className="panel media-panel">
-          <p>تمويل أوضح</p>
-          <strong>أقساط تناسب الراتب</strong>
+      <section className="new-loan">
+        <div className="new-loan-copy">
+          <h2>إستخراج قرض جديد</h2>
+          <p>
+            تأكيد السداد لتسديد قروض تقدم خدمات تسديد القروض والمديونيات لجميع
+            العملاء بجميع أنواعها، وبنظام متكامل وخبرات طويلة في هذا المجال،
+            وبأمانة ومصداقية وإنجاز في العمل.
+          </p>
+          <p>
+            نقدم حلولًا مالية شاملة للأفراد والشركات المتعثرين في سداد القروض،
+            أو الراغبين في الحصول على تمويل جديد لمشاريعهم. خبرتنا وخدماتنا
+            المتخصصة تساعدك على تحقيق أهدافك المالية بسهولة وسرعة.
+          </p>
+          <Link className="btn" to="/contact">
+            تواصل معنا الآن
+          </Link>
         </div>
-        <div>
-          <h2>استخراج تمويل جديد</h2>
-          <p>
-            بعد ترتيب الالتزامات القديمة، نجهز ملف الطلب: تعريف الراتب، كشف
-            الحساب، وحالة السجل الائتماني. الهدف أن يصل الطلب للجهة الممولة
-            وهو مكتمل.
-          </p>
-          <p>
-            نخدم الأفراد الذين يريدون إغلاق قرض قائم، أو نقل الالتزام، أو طلب
-            تمويل بعد رفع التعثر.
-          </p>
+        <div className="new-loan-art">
+          <img src="/hero-cash.jpg" alt="يد تحمل أوراقًا نقدية من الريال السعودي" />
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" id="loan-services">
         <h2>خدمات تسديد القروض</h2>
         <p className="lead">
-          سداد القروض البنكية، متابعة التعثر في سمة، البطاقات الائتمانية،
-          وإيقاف الخدمات، مع إعادة الجدولة عندما تكون أنسب من السداد دفعة واحدة.
+          نساعدك في تسديد القروض البنكية ورفع التعثرات من سمة مع سداد البطاقات
+          الائتمانية وسداد إيقاف الخدمات واستخراج قرض جديد، بالإضافة إلى التحويل
+          من بنك الى بنك اخر - بنك الراجحي 24 راتب - جميع البنوك 36 راتب
         </p>
-        <div className="cards">
-          {services.map((service) => (
-            <article className="card" key={service.title}>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section">
-        <h2>المدن</h2>
-        <div className="city-list">
-          {cities.map((city) => (
-            <article className="city-card" key={city.slug}>
-              <div className="city-visual">{city.name}</div>
-              <div className="city-body">
+        <div className="loan-cards">
+          {loanCities.map((city) => (
+            <article className="loan-card" key={city.slug}>
+              <img src={`/cities/${city.slug}.png`} alt={city.title} />
+              <div className="loan-card-body">
                 <h3>{city.title}</h3>
-                <p>{city.summary}</p>
-                <Link to={`/city/${city.slug}`}>قراءة المزيد</Link>
+                <p>{city.text}</p>
+                <Link to="/article/military-new-loan">قراءة المزيد ←</Link>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section features">
-        <h2>ما يميز الخدمة</h2>
-        <p>
-          نرتب القرض القديم في مدن المملكة بعمولة تُشرح قبل البدء، وخطوات
-          يمكن متابعتها في نفس اليوم عندما يكتمل الملف.
-        </p>
-        <ul>
-          {highlights.map((item) => (
-            <li key={item}>{item}</li>
+      <section className="why-us">
+        <div className="why-us-copy">
+          <h2>ما يميز خدماتنا في تسديد القروض والمتعثرات</h2>
+          <p>
+            نسدد قروضك القديمة في جميع أنحاء المملكة العربية السعودية، مع حل
+            السداد لخدمات تسديد المتعثرات والتسديد القروض بأقل عمولة وإنجاز
+            بنفس اليوم مع شروط سهلة وميسرة
+          </p>
+          <ul>
+            {whyUs.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="why-us-gallery">
+          <img className="g1" src="/feature-1.png" alt="يد تمسك أوراقًا نقدية سعودية" />
+          <img className="g2" src="/feature-2.png" alt="تسليم أوراق نقدية من فئة خمسمئة ريال" />
+          <img className="g3" src="/feature-3.png" alt="عدّ رزمة من الأوراق النقدية" />
+          <img className="g4" src="/feature-4.png" alt="أوراق نقدية سعودية متنوعة" />
+        </div>
+      </section>
+
+      <section className="testimonials">
+        <h2>عملاء يثقون بخدماتنا</h2>
+        <div className="testimonial-list">
+          {testimonials.map((item) => (
+            <figure className="testimonial" key={item.name}>
+              <img src={item.avatar} alt="" />
+              <blockquote>“{item.quote}”</blockquote>
+              <figcaption>{item.name}</figcaption>
+            </figure>
           ))}
-        </ul>
+        </div>
       </section>
     </>
   )

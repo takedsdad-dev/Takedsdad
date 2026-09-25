@@ -17,7 +17,6 @@ const menu = [
 
 export default function Layout() {
   const [open, setOpen] = useState(false)
-
   function closeMenus() {
     setOpen(false)
   }
@@ -37,6 +36,9 @@ export default function Layout() {
 
         <nav className="nav" aria-label="القائمة الرئيسية">
           <div className="nav-row">
+            <NavLink to="/" end onClick={closeMenus}>
+              الرئيسية
+            </NavLink>
             {menu.slice(0, 6).map(([slug, label]) => (
               <NavLink key={slug} to={`/city/${slug}`} onClick={closeMenus}>
                 {label}
