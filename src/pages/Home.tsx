@@ -81,7 +81,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-art">
-          <img src="/hero-cash.jpg" alt="أوراق نقدية من فئة خمسمئة ريال" />
+          <img src="/hero-hands.png" alt="يدان تعدّان أوراقًا نقدية من فئة خمسمئة ريال" />
         </div>
         <div className="banks">
           <img
@@ -123,7 +123,7 @@ export default function Home() {
         <div className="loan-cards">
           {loanCities.map((city) => (
             <article className="loan-card" key={city.slug}>
-              <img src={`/cities/${city.slug}.png`} alt={city.title} />
+              <img src={`/cities/${city.slug}.jpg`} alt={city.title} />
               <div className="loan-card-body">
                 <h3>{city.title}</h3>
                 <p>{city.text}</p>
