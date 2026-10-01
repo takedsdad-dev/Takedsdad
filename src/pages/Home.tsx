@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom"
+import Seo from "../seo/Seo"
+import { homeSeo } from "../seo/meta"
 
 const whyUs = [
   "السداد المبكر بأي وقت بناء على ضوابط البنك المركزي السعودي",
@@ -33,37 +35,50 @@ const loanCities = [
     slug: "makkah",
     title: "سداد قروض مكة",
     text: "نوفر لكم في تأكيد السداد لتسديد القروض في مكة أفضل الحلول الممكنة للتخلص من عبء الديون ورفع التعثرات المالية.",
+    width: 670,
+    height: 395,
   },
   {
     slug: "jeddah",
     title: "سداد قروض جده",
     text: "نضع خبرتنا وإمكانياتنا في خدمة عملائنا في جدة لتقديم أفضل الحلول لسداد القروض ورفع التعثرات المالية.",
+    width: 670,
+    height: 395,
   },
   {
     slug: "taif",
     title: "سداد قروض الطائف",
     text: "نوفر لكم الدعم والاستشارات اللازمة لتسهيل عملية سداد قروضكم والتغلب على أي عقبات قد تواجهكم في الطائف.",
+    width: 670,
+    height: 395,
   },
   {
     slug: "dammam",
     title: "سداد قروض الدمام",
     text: "نقدم في تأكيد السداد خطط سداد قروض تتسم بالمرونة والفاعلية لتناسب جميع الظروف والاحتياجات لعملاء الدمام.",
+    width: 670,
+    height: 395,
   },
   {
     slug: "riyadh",
     title: "سداد قروض الرياض",
     text: "يضم فريق تأكيد السداد نخبة من الخبراء والمختصين في مجال تسديد القروض لتقديم أفضل الخدمات لعملائنا في الرياض.",
+    width: 670,
+    height: 395,
   },
   {
     slug: "tabuk",
     title: "سداد قروض تبوك",
     text: "نسعى في تأكيد السداد لتقديم أفضل الخدمات والحلول الممكنة لعملائنا بمدينة تبوك بأسعار مناسبة ونتائج مضمونة.",
+    width: 526,
+    height: 310,
   },
 ]
 
 export default function Home() {
   return (
     <>
+      <Seo {...homeSeo()} />
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">مكتب تأكيد السداد لتسديد قروض ومتعثرات سمة</p>
@@ -81,12 +96,22 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-art">
-          <img src="/hero-hands.png" alt="يدان تعدّان أوراقًا نقدية من فئة خمسمئة ريال" />
+          <img
+            src="/hero-hands.png"
+            alt="يدان تعدّان أوراقًا نقدية من فئة خمسمئة ريال"
+            width={953}
+            height={726}
+            fetchPriority="high"
+            decoding="async"
+          />
         </div>
         <div className="banks">
           <img
             src="/banks.png"
             alt="بنوك نتعامل معها: مصرف الراجحي، بنك الرياض، بنك البلاد، مصرف الإنماء"
+            width={299}
+            height={96}
+            decoding="async"
           />
         </div>
       </section>
@@ -109,7 +134,14 @@ export default function Home() {
           </Link>
         </div>
         <div className="new-loan-art">
-          <img src="/hero-cash.jpg" alt="يد تحمل أوراقًا نقدية من الريال السعودي" />
+          <img
+            src="/hero-cash.jpg"
+            alt="يد تحمل أوراقًا نقدية من الريال السعودي"
+            width={1200}
+            height={674}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </section>
 
@@ -123,7 +155,14 @@ export default function Home() {
         <div className="loan-cards">
           {loanCities.map((city) => (
             <article className="loan-card" key={city.slug}>
-              <img src={`/cities/${city.slug}.jpg`} alt={city.title} />
+              <img
+                src={`/cities/${city.slug}.jpg`}
+                alt={city.title}
+                width={city.width}
+                height={city.height}
+                loading="lazy"
+                decoding="async"
+              />
               <div className="loan-card-body">
                 <h3>{city.title}</h3>
                 <p>{city.text}</p>
@@ -149,10 +188,42 @@ export default function Home() {
           </ul>
         </div>
         <div className="why-us-gallery">
-          <img className="g1" src="/feature-1.png" alt="يد تمسك أوراقًا نقدية سعودية" />
-          <img className="g2" src="/feature-2.png" alt="تسليم أوراق نقدية من فئة خمسمئة ريال" />
-          <img className="g3" src="/feature-3.png" alt="عدّ رزمة من الأوراق النقدية" />
-          <img className="g4" src="/feature-4.png" alt="أوراق نقدية سعودية متنوعة" />
+          <img
+            className="g1"
+            src="/feature-1.png"
+            alt="يد تمسك أوراقًا نقدية سعودية"
+            width={162}
+            height={196}
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            className="g2"
+            src="/feature-2.png"
+            alt="تسليم أوراق نقدية من فئة خمسمئة ريال"
+            width={162}
+            height={92}
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            className="g3"
+            src="/feature-3.png"
+            alt="عدّ رزمة من الأوراق النقدية"
+            width={161}
+            height={89}
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            className="g4"
+            src="/feature-4.png"
+            alt="أوراق نقدية سعودية متنوعة"
+            width={161}
+            height={195}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </section>
 
@@ -161,7 +232,7 @@ export default function Home() {
         <div className="testimonial-list">
           {testimonials.map((item) => (
             <figure className="testimonial" key={item.name}>
-              <img src={item.avatar} alt="" />
+              <img src={item.avatar} alt="" width={42} height={42} loading="lazy" decoding="async" />
               <blockquote>“{item.quote}”</blockquote>
               <figcaption>{item.name}</figcaption>
             </figure>

@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom"
 import { articles } from "../articles"
 import { site } from "../site"
+import Seo from "../seo/Seo"
+import { articleSeo, notFoundSeo } from "../seo/meta"
 
 function ContactButton() {
   return (
@@ -22,6 +24,7 @@ export default function ArticlePage() {
   if (!article) {
     return (
       <section className="article">
+        <Seo {...notFoundSeo()} />
         <h1>المقال غير موجود</h1>
         <Link to="/city/jazan">العودة إلى سداد قروض جازان</Link>
       </section>
@@ -35,6 +38,7 @@ export default function ArticlePage() {
   return (
     <>
       <article className="article rich-article">
+        <Seo {...articleSeo(article)} />
         <h1>{article.title}</h1>
         {article.date && (
           <p className="article-meta">
