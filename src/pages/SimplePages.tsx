@@ -1,10 +1,19 @@
 import { useState, type FormEvent } from "react"
 import { Link } from "react-router-dom"
 import { phones, services, site } from "../site"
+import Seo from "../seo/Seo"
+import {
+  aboutSeo,
+  contactSeo,
+  privacySeo,
+  servicesSeo,
+  termsSeo,
+} from "../seo/meta"
 
 export function ServicesPage() {
   return (
     <section className="article">
+      <Seo {...servicesSeo()} />
       <h1>خدماتنا</h1>
       <p>
         نراجع القرض، البطاقة، أو إيقاف الخدمات، ثم نوضح المسار: سداد، تسوية، أو
@@ -40,6 +49,7 @@ const aboutValues = [
 export function AboutPage() {
   return (
     <div className="about">
+      <Seo {...aboutSeo()} />
       <section className="about-hero">
         <div className="about-hero-copy">
           <p className="about-eyebrow">لننجح سوياً</p>
@@ -61,7 +71,14 @@ export function AboutPage() {
           </Link>
         </div>
         <div className="about-hero-art">
-          <img src="/hero-cash.jpg" alt="أوراق نقدية من فئة خمسمئة ريال" />
+          <img
+            src="/hero-cash.jpg"
+            alt="أوراق نقدية من فئة خمسمئة ريال"
+            width={1200}
+            height={674}
+            fetchPriority="high"
+            decoding="async"
+          />
         </div>
       </section>
 
@@ -109,6 +126,7 @@ export function AboutPage() {
 export function PrivacyPage() {
   return (
     <section className="article terms">
+      <Seo {...privacySeo()} />
       <h1>سياسة الخصوصية لموقع تأكيد السداد لتسديد القروض</h1>
       <p>
         أهلاً بك في موقع “تأكيد السداد لتسديد القروض”. نحن نولي أهمية كبيرة
@@ -233,6 +251,7 @@ const terms = [
 export function TermsPage() {
   return (
     <section className="article terms">
+      <Seo {...termsSeo()} />
       <h1>شروط وأحكام موقع تأكيد السداد لتسديد القروض</h1>
       <h2>مقدمة:</h2>
       <p>
@@ -276,6 +295,7 @@ export function ContactPage() {
 
   return (
     <section className="contact-page">
+      <Seo {...contactSeo()} />
       <div className="contact-intro">
         <h1>لديك إستفسار؟ تواصل معنا الآن</h1>
         <p>

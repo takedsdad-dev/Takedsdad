@@ -1,5 +1,7 @@
 import { Link, useParams } from "react-router-dom"
 import { cities, phones, services } from "../site"
+import Seo from "../seo/Seo"
+import { citySeo, notFoundSeo } from "../seo/meta"
 
 export default function CityPage() {
   const { slug } = useParams()
@@ -8,6 +10,7 @@ export default function CityPage() {
   if (!city) {
     return (
       <section className="article">
+        <Seo {...notFoundSeo()} />
         <h1>الصفحة غير موجودة</h1>
         <Link to="/">العودة للرئيسية</Link>
       </section>
@@ -16,6 +19,7 @@ export default function CityPage() {
 
   return (
     <article className="article">
+      <Seo {...citySeo(city)} />
       <p className="banner">{city.title}</p>
       {(city.slug === "taif" || city.slug === "jazan") && (
         <p className="phone-line">
@@ -77,7 +81,14 @@ export default function CityPage() {
             <Link to="/article/stop-services">قراءة المزيد »</Link>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>تسديد قروض العسكرين | 0500009560 | سداد متعثرات سمه</h2>
               <p>
@@ -92,7 +103,14 @@ export default function CityPage() {
             </div>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>مكتب تسديد قروض بنك الراجحى الاهلي جميع المناطق 0500009560</h2>
               <p>
@@ -176,7 +194,14 @@ export default function CityPage() {
             <Link to="/article/stop-services">قراءة المزيد »</Link>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>تسديد قروض العسكريين | 0500009560 | سداد متعثرات سمه</h2>
               <p>
@@ -188,7 +213,14 @@ export default function CityPage() {
             </div>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>مكتب تسديد قروض بنك الراجحى الاهلي جميع المناطق 0500009560</h2>
               <p>
@@ -227,7 +259,14 @@ export default function CityPage() {
             <Link to="/article/stop-services">قراءة المزيد »</Link>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>تسديد قروض العسكرين | 0500009560 | سداد متعثرات سمه</h2>
               <p>
@@ -239,7 +278,14 @@ export default function CityPage() {
             </div>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>مكتب تسديد قروض بنك الراجحى الاهلي جميع المناطق 0500009560</h2>
               <p>
@@ -287,7 +333,14 @@ export default function CityPage() {
             <Link to="/article/stop-services">قراءة المزيد »</Link>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>تسديد قروض العسكرين | 0500009560 | سداد متعثرات سمه</h2>
               <p>
@@ -299,7 +352,14 @@ export default function CityPage() {
             </div>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>مكتب تسديد قروض بنك الراجحى الاهلي جميع المناطق 0500009560</h2>
               <p>
@@ -365,7 +425,14 @@ export default function CityPage() {
             </a>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>تسديد قروض العسكرين | 0500009560 | سداد متعثرات سمه</h2>
               <p>
@@ -377,7 +444,14 @@ export default function CityPage() {
             </div>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>مكتب تسديد قروض بنك الراجحى الاهلي جميع المناطق 0500009560</h2>
               <p>
@@ -416,7 +490,14 @@ export default function CityPage() {
             <Link to="/article/stop-services">قراءة المزيد »</Link>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>تسديد قروض العسكرين | 0500009560 | سداد متعثرات سمه</h2>
               <p>
@@ -428,7 +509,14 @@ export default function CityPage() {
             </div>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>مكتب تسديد قروض بنك الراجحى الاهلي جميع المناطق 0500009560</h2>
               <p>
@@ -465,7 +553,14 @@ export default function CityPage() {
             <Link to="/article/stop-services">قراءة المزيد »</Link>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>تسديد قروض العسكرين | 0500009560 | سداد متعثرات سمه</h2>
               <p>
@@ -477,7 +572,14 @@ export default function CityPage() {
             </div>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>مكتب تسديد قروض بنك الراجحى الاهلي جميع المناطق 0500009560</h2>
               <p>
@@ -543,7 +645,14 @@ export default function CityPage() {
             </a>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>تسديد قروض العسكرين | 0500009560 | سداد متعثرات سمه</h2>
               <p>
@@ -555,7 +664,14 @@ export default function CityPage() {
             </div>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>مكتب تسديد قروض بنك الراجحى الاهلي جميع المناطق 0500009560</h2>
               <p>
@@ -639,7 +755,14 @@ export default function CityPage() {
             <Link to="/article/stop-services">قراءة المزيد »</Link>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>تسديد قروض العسكرين | 0500009560 | سداد متعثرات سمه</h2>
               <p>
@@ -651,7 +774,14 @@ export default function CityPage() {
             </div>
           </article>
           <article className="post-with-photo">
-            <img src="/al-rajhi-atm.jpg" alt="مصرف الراجحي" />
+            <img
+              src="/al-rajhi-atm.jpg"
+              alt="مصرف الراجحي"
+              width={1024}
+              height={575}
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               <h2>مكتب تسديد قروض بنك الراجحى الاهلي جميع المناطق 0500009560</h2>
               <p>

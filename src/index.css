@@ -17,7 +17,8 @@
 html { scroll-behavior: smooth; }
 #loan-services { scroll-margin-top: 16px; }
 body { margin: 0; overflow-x: hidden; }
-img { max-width: 100%; }
+/* height:auto keeps intrinsic width/height attributes (added for CLS) from forcing a fixed pixel height. */
+img { max-width: 100%; height: auto; }
 h1, h2, h3, p, a { overflow-wrap: anywhere; }
 a { color: var(--sage-deep); text-decoration: none; }
 button, input, textarea { font: inherit; }
